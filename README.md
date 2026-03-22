@@ -2,11 +2,13 @@ GitHub Access Report Service
 
 
 Overview
+
 This project is a Spring Boot based backend service that connects to the GitHub REST API and generates a structured report showing which users have access to which repositories within a given organization.
 The service helps organizations gain visibility into repository access and simplifies access auditing.
 
 
 Features
+
 Authenticate with GitHub using a Personal Access Token
 Retrieve repositories of a GitHub organization
 Fetch collaborators for each repository
@@ -15,6 +17,7 @@ Expose a REST API endpoint that returns the access report in JSON format
 
 
 Technology Stack
+
 Java 17
 Spring Boot
 Maven
@@ -23,6 +26,7 @@ Jackson for JSON parsing
 
 
 How to Run the Project
+
 Step 1 — Clone the repository
 Clone the project from GitHub and open it in IntelliJ IDEA.
 
@@ -39,6 +43,7 @@ http://localhost:8080
 
 
 Authentication Configuration
+
 The service uses a GitHub Personal Access Token to authenticate API requests.
 
 To generate the token:
@@ -49,6 +54,7 @@ The token is currently passed as a query parameter in the API request.
 
 
 API Endpoint
+
 GET /api/github/access-report
 
 Example request:
@@ -69,6 +75,7 @@ Example response:
 
 
 Design Decisions and Assumptions
+
 The application follows a layered architecture consisting of Controller, Service, and Client layers to maintain clean code organization.
 Repository collaborator APIs are called sequentially for simplicity and clarity of implementation.
 Jackson ObjectMapper is used for parsing JSON responses from the GitHub API.
@@ -76,6 +83,7 @@ Basic exception handling has been implemented to manage API failures.
 
 
 Scalability Considerations
+
 To support large organizations with hundreds of repositories and thousands of users, the system can be improved by implementing:
 Parallel API calls using asynchronous processing
 Pagination handling for GitHub API responses
@@ -84,4 +92,5 @@ Retry mechanisms for GitHub rate limit handling
 
 
 Author
+
 Aryan Tyagi
